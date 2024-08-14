@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="nysg_tools",
-    version="0.2",
+    version="0.4",
     packages=find_packages(),
     install_requires=["numpy", "pandas"],
     description="Una colección de herramientas utiles para los laboratorios de la UBA FCEN",
