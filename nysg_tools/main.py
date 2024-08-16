@@ -1,6 +1,10 @@
 import numpy as np
 import sympy as sym
 from typing import Union, Tuple, Dict
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+from scipy.odr import ODR, Model, RealData
+import inspect
 
 
 def propagate(
@@ -77,7 +81,7 @@ def propagate(
     pass
 
 
-def Cont(x, a=1000):
+def cont(x, a=1000):
     """Devuelve un array "continuo" del array especificado,
     efectivamente solamente retorna linspace(min(x),max(a),step=a)
     defualt a = 1000
@@ -85,7 +89,7 @@ def Cont(x, a=1000):
     return np.linspace(np.min(x), np.max(x), a)
 
 
-def Fit_Lsq(
+def fit_lsq(
     x, y, func, p0=None, a=1000, maxfev=1000, yerr=None, n=3, yap=True, see_res=False
 ):
     """Realiza un ajuste LSQ a los datos
@@ -184,7 +188,7 @@ def Fit_Lsq(
     return {"params": popt, "err": perr}
 
 
-def Fit_ODR(
+def fit_odr(
     x, y, func, xerr, yerr, p0, maxit=50000, a=0, yap=True, debug_yap=False, n=3
 ):
     """Realiza un ajuste ODR a los datos
@@ -275,7 +279,7 @@ def Fit_ODR(
     return {"params": beta, "err": beta_err, "chi2": chi2, "DF": v}
 
 
-def FourierTransform(x: np.ndarray, y: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+def fft(x: np.ndarray, y: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     """
     Calcula la transformada de Fourier de una señal discreta.
 
