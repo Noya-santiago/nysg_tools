@@ -5,13 +5,14 @@ Una colección de funciones utiles para los laboratorios de Física de la UBA.
 ## Install
 
 ```sh
-python -m pip install labotools-nysg
+python -m pip install nysg_tools
 ```
 
 ## Usage
 
 ```py
-import labotools-nysg as ny
+!pip install nysg_tools
+import nysg_tools as ny
 ```
 
 ## Licensing
