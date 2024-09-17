@@ -1,1 +1,1 @@
-from .main import propagate, cont, fit_lsq, fit_odr, fft
+from .main import propagate, cont, fit_lsq, fit_odr, fft, err_band

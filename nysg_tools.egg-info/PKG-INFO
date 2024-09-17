@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: nysg-tools
-Version: 0.7
+Version: 0.8
 Summary: Una colección de herramientas utiles para los laboratorios de la UBA FCEN
 Home-page: https://github.com/Noya-santiago/nysg_tools
 Author: Santiago Noya
@@ -17,13 +17,14 @@ Una colección de funciones utiles para los laboratorios de Física de la UBA.
 ## Install
 
 ```sh
-python -m pip install labotools-nysg
+python -m pip install nysg_tools
 ```
 
 ## Usage
 
 ```py
-import labotools-nysg as ny
+!pip install nysg_tools
+import nysg_tools as ny
 ```
 
 ## Licensing

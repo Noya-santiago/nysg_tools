@@ -301,3 +301,13 @@ def fft(x: np.ndarray, y: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     frecuencia = frecuencia[np.arange(largo // 2)]
     transformada = transformada[np.arange(largo // 2)]
     return frecuencia, transformada
+
+
+def err_band(params, err, model, x):
+    rng = np.random.default_rng(1)
+    params_montecarlo = np.random.normal(params, err, size=(500, np.size(params)))
+
+    y_bound = [model(x, *param_row) for param_row in params_montecarlo]
+
+    y_fit_err = np.std(y_bound, axis=0)
+    return y_fit_err
